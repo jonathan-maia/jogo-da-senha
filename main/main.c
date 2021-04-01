@@ -3,7 +3,7 @@
 
 int main(void)
 {
-  int senha,i,chances = 5, palpite,v1=0 , v2=100, v5 =1;
+  int senha,i,chances = 5, palpite,v1=0 , v2=100;
   int continua;
 
   do{
