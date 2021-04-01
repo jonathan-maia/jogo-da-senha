@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main(void)
 {
+  setlocale(LC_ALL, "Portuguese-brazilian"); //Mudar config de utf8 p/ ISO 8859-1
+
   int senha,i,chances = 5, palpite,v1=0 , v2=100;
   int continua;
 
@@ -12,38 +15,39 @@ int main(void)
     scanf("%d", &senha);
     system("cls");
  
-    //verificando se senha estÃ¡ dentro das espedificaÃ§Ãµes
+    //verificando se senha está dentro das especificações
     while(senha < v1 || senha > v2){
       printf("Senha fora do intervalo permitido, digite outra senha : ");
       scanf("%d", &senha);
     }
+
     //Jogador 2
-    printf("Jogador 2 - VocÃª tem %d chances para descobrir a senha ! \n",chances);
+    printf("Jogador 2 - Você tem %d chances para descobrir a senha ! \n",chances);
 
     //palpites e repostas
     for(i = 1; i < chances+1; i++){
-      printf("DÃª o %d Âº palpite : ",i);
+      printf("Dê o %dº palpite : ",i);
       scanf("%d", &palpite);
       if(palpite < v1 || palpite > v2){
         printf("O palpite foi fora do intervalo ! (de %d a %d) \n", v1,v2);
         i = i-1;
       }else{
         if(senha == palpite){
-          printf("VocÃª acertou ! A senha era %d ! \n", senha);
-          printf("Deseja jogar novamente ? (Digite 1 para sim ou outro nÃºmero para sair.)");
+          printf("Você acertou ! A senha era %d ! \n", senha);
+          printf("Deseja jogar novamente ? (Digite 1 para sim ou outro número para sair.): ");
           scanf("%d",&continua);
           break;
         }else if(i == 5 ){
-          printf("VocÃª perdeu. Tente novamente depois.\n");
-          printf("Deseja jogar novamente ? (Digite 1 para sim ou outro nÃºmero para sair.)");
+          printf("Você perdeu. Tente novamente depois.\n");
+          printf("Deseja jogar novamente ? (Digite 1 para sim ou outro número para sair.)");
           scanf("%d",&continua);
         }else if(senha == palpite-1 || senha == palpite+1){
-          printf("TÃ QUENTE !!! \n");
+          printf("TÁ QUENTE !!! \n");
         }else{
           if(palpite > senha){
-            printf("A senha Ã© menor que %d ! \n",palpite);
+            printf("A senha é menor que %d ! \n",palpite);
           }else{
-            printf("A senha Ã© maior que %d! \n",palpite);
+            printf("A senha é maior que %d! \n",palpite);
           }
         }
       }
