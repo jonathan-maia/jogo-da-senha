@@ -10,7 +10,7 @@ int main(void)
     //pedindo senha ao jogador1
     printf("Jogador 1 - Digite uma senha entre %d e %d para ser descoberta pelo jogador 2 : ", v1,v2);
     scanf("%d", &senha);
-    system("clear");
+    system("cls");
  
     //verificando se senha está dentro das espedificações
     while(senha < v1 || senha > v2){
