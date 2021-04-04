@@ -19,19 +19,19 @@ int main(void)
     if(maquina==1){
       srand((unsigned)time(NULL));
       senha = (rand() % v2) +1;
-      printf("%d", senha);
       
     }else{
       //pedindo senha ao jogador1
       printf("Jogador 1 - Digite uma senha entre %d e %d para ser descoberta pelo jogador 2 : ", v1,v2);
       scanf("%d", &senha);
-      system("cls");
   
-      //verificando se senha está dentro das especificações
+      //verificando se senha está dentro das especificações e pedindo outra senha
       while(senha < v1 || senha > v2){
         printf("Senha fora do intervalo permitido, digite outra senha : ");
         scanf("%d", &senha);
       }
+      //limpando terminal
+      system("cls");
     }
 
     //Jogador 2
