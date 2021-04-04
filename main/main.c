@@ -16,6 +16,7 @@ int main(void)
     printf("Se desejar jogar contra o computador, digite 1. Para jogar contra outra pessoa, digite qualquer outro número :");
     scanf("%d", &maquina);
 
+    // jogar contra máquina e gerar senha aleatória
     if(maquina==1){
       srand((unsigned)time(NULL));
       senha = (rand() % v2) +1;
