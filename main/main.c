@@ -13,7 +13,7 @@ int main(void)
   do{
 
     //perguntando se ir� jogar contra a m�quina.
-    printf("Se desejar jogar contra o computador, digite 1. Para jogar contra outra pessoa, digite qualquer outro n�mero :");
+    printf("Se desejar jogar contra o computador, digite 1. Para jogar contra outra pessoa, digite qualquer outro n�mero : ");
     scanf("%d", &maquina);
 
     // jogar contra m�quina e gerar senha aleat�ria
